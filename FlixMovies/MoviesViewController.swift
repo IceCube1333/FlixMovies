@@ -13,13 +13,14 @@ class MoviesViewController: UIViewController, UITableViewDataSource, UITableView
     
     
     @IBOutlet weak var TableView: UITableView!
-    var movies = [[String:Any]]()
+    var movies = [[String:Any]]();
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         TableView.dataSource = self;
         TableView.delegate = self;
+        
 
         let url = URL(string: "https://api.themoviedb.org/3/movie/now_playing?api_key=a07e22bc18f5cb106bfe4cc1f83ad8ed")!
         let request = URLRequest(url: url, cachePolicy: .reloadIgnoringLocalCacheData, timeoutInterval: 10)
